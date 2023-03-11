@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/message.css') }}">
+</head>
+<body>
+    <div id="title_container">
+        <h1 id="form_title" >Message Page</h1>
+    </div>
+    <hr>
+    <div id="links">
+        <a class="link" href="/home_page">Go Home</a>
+    </div>
+    <hr>
+    <div id="message_container">
+        <h1 id="message" >{{ message[0] }}</h1>
+    </div>
+</body>
+<script src="{{ url_for('static', filename='js/message.js') }}"></script>
+</html>

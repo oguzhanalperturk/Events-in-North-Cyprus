@@ -1,0 +1,52 @@
+body{
+    background-color: seashell;
+}
+#title_container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+#registration_form_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+#error_container{
+    text-align: center;
+}
+#registration_form{
+    border: 1px solid black;
+    padding: 2rem;
+}
+#links{
+    display: flex;
+    justify-content: center;
+}
+.link{
+    text-decoration: none;
+    margin: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.7rem;
+    background-color:#008CBA;
+    border: 1px solid #008CBA;
+    color: white; 
+    border-radius: 0.3rem;
+}
+.link:hover{
+    color: #008CBA;
+    background-color: rgba(0,0,0,0);
+}
+.button{
+    margin-top:1rem;
+    font-size: 1rem;
+    padding: 0.4rem 0.7rem;
+    background-color:#555555;
+    border: 1px solid #555555;
+    color: white;  
+    border-radius: 0.3rem;
+}
+.button:hover{
+    color: #555555;
+    background-color: rgba(0,0,0,0);
+    cursor:pointer;
+}

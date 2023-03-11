@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+</head>
+<body>
+    <div id="title_container">
+        <h1 id="form_title" >Home Page</h1>
+    </div>
+    <hr>
+    <div id="links">
+        <a id = "link1" class="link" href="/register_page">Register</a>
+    </div>
+    <hr>
+
+
+    {% if not username %}
+        <div id="login_form_container">
+
+            <form id="login_form" action="/login" method="POST">
+                <p>Username: <input type="text" name="username"/></p>
+                <p>Password: <input type="password" name="password"/></p>
+                <p><input class="button" id="login_button" type="submit" value="Login" /></p>
+            </form>
+
+        </div>
+    {% endif %}
+
+        <div id="search_items_container">
+            <form id="search_form" action="/search_event" method="POST">
+                <input id ="search_str" type="text" name="search_str" placeholder="Search..." required/>
+                <input id="search_button" class="button" type="submit" value="Search">
+            </form>
+                <a id="refresh_link" class="link" href="/home_page" >Refresh</a>
+        </div>
+
+        <div id=table_container>
+
+        {% for city in events %}
+
+        {% set outer_loop = loop.index %}
+
+        <h2 class="table_titles">{{ cities[loop.index-1][1] }}</h2>
+
+        <h3 class="no_events_titles">(No Events)</h3>
+
+        <table class="tables">
+
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th></th>
+            </tr>
+            
+            {% for event in city %}
+
+              <tr class="table_elements">
+               <td class="event_name">{{ event[1] }}</td>
+               <td id="city">{{ cities[outer_loop-1][1] }}</td>
+               <td>{{ event[3] }}</td>
+               <td>{{ event[4] }}</td>
+               <td>{{ event[5] }}</td>
+               <td><a class="see_more_links" href="{{url_for('event_details', eventid= event[0])}}" >See More</a></td>
+              </tr>
+
+              {% endfor %}
+
+        </table>
+
+        <hr id="table_seperator_line">
+
+        {% endfor %}
+        </div>
+
+    
+
+    
+</body>
+
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
+</html>

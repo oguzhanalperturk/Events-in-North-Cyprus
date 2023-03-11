@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+
+
+<body>
+    <div id="title_container">
+        <h1 id="form_title" >Registration Page</h1>
+    </div>
+    <hr>
+    <div id="links">
+        <a id = "link1" class="link" href="/home_page">Go Home</a>
+    </div>
+    <hr>
+    <div id="registration_form_container">
+
+        <form id="registration_form" action="/register" method="POST" onsubmit="return validate();">
+            <p>Username: <input id="username" type="text" name="username"/></p>
+            <p>Password: <input id="password" type="password" name="password"/></p>
+            <p>First Name: <input id="firstname" type="text" name="firstname"/></p>
+            <p>Last Name: <input id="lastname" type="text" name="lastname"/></p>
+            <p>Email: <input id="email" type="email" name="email"/></p>
+            <p><input id="reg_button" class="button" type="submit" value="Register"></p>
+        </form>
+
+    </div>
+    <div id="error_container">
+        {% for message in error_message %}
+        <p> {{ message }} </p>
+        {% endfor %}
+    </div>
+
+    
+</body>
+
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+
+</html>

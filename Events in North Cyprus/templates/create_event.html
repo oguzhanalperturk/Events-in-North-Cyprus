@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create_event.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div id="title_container">
+        <h1 id="form_title" >Create Event Page</h1>
+    </div>
+    <hr>
+    <div id="links">
+        <a id = "link1" class="link" href="/home_page">Go Home</a>
+    </div>
+    <hr>
+    <div id="event_form_container">
+
+        <form id="create_event_form" action="/create_event" method="POST" onsubmit= "return validate();">
+
+            <p>Event Name: <input id ="event_name" type="text" name="event_name"/></p>
+            <p>Description: <input id ="description" type="text" name="description"/></p>
+            <p>Location: <input id ="location" type="text" name="location"/></p>
+            <label for="cities">City of the Event:</label>
+            <select id ="cities" name="cities" id="cities">
+                {% for city in cities %}
+                <option value="{{ city[0] }}">{{ city[1] }}</option>
+                {% endfor %}
+                
+            </select>
+            <p>Ticket Price: <input id ="ticket_price" type="text" name="ticket_price"/></p>
+            <p>Date & Time <input id ="date_time" type="datetime-local" name="date_time" /></p>
+
+            <p><input id="create_event_button" class="button" type="submit" value="Create Event"></p>
+        </form>
+
+    </div>
+
+    <div id="error_container">
+
+    </div>
+
+</body>
+
+<script src="{{ url_for('static', filename='js/create_event.js') }}"></script>
+
+</html>

@@ -1,0 +1,142 @@
+
+body{
+    background-color: seashell;
+}
+#title_container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+#login_form_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+#login_form{
+    border: 1px solid black;
+    padding: 2rem;
+}
+#links{
+    display: flex;
+    justify-content: center;
+}
+.link{
+    text-decoration: none;
+    margin: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.7rem;
+    background-color:#008CBA;
+    border: 1px solid #008CBA;
+    color: white; 
+    border-radius: 0.3rem;
+}
+.link:hover{
+    color: #008CBA;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+}
+.button{
+    font-size: 1rem;
+    padding: 0.4rem 0.7rem;
+    background-color:#555555;
+    border: 1px solid #555555;
+    color: white;  
+    border-radius: 0.3rem;
+}
+.button:hover{
+    color: #555555;
+    background-color: rgba(0,0,0,0);
+    cursor:pointer;
+}
+.tables{
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-bottom:3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+td,th{
+    padding:1rem;
+    border: solid 2px lightgrey;
+    overflow: hidden;
+    text-align: center;
+}
+#table_container{
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom:7rem;
+}
+#city{
+    width:7rem;
+}
+.event_name{
+    width:17rem;
+}
+.no_events_titles{
+    display: none;
+}
+#table_seperator_line{
+    width:80%;
+}
+.see_more_links{
+    text-decoration: none;
+    margin: 0.2rem 0.5rem;
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+    background-color:#4CAF50;
+    border: 1px solid #4CAF50;
+    color: white; 
+    border-radius: 0.3rem;
+}
+.see_more_links:hover{
+    color: #4CAF50;
+    background-color: rgba(0,0,0,0);
+}
+#search_items_container{
+    display:flex;
+    justify-content: center;
+    margin: 3rem 0rem;
+}
+#search_form{
+    display:flex;
+    margin-top: 0.2rem;
+}
+#search_str{
+    margin-right: 0.5rem;
+    width:100%;
+    height:2rem;
+    padding: 0rem 0.3rem;
+    font-size: 1.1rem;
+
+}
+#search_button{
+    text-decoration: none;
+    margin: 0rem 0.5rem;
+    font-size: 1.2rem;
+    padding: 0rem 0.7rem;
+    height:2.6rem;
+    background-color:#ff8928;
+    border: 1px solid #ff8928;
+    color: white; 
+    border-radius: 0.3rem;
+}
+#search_button:hover{
+    color: #ff8928;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+}
+#refresh_link{
+    text-decoration: none;
+    margin: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.7rem;
+    background-color:#555555;
+    border: 1px solid #555555;
+    color: white; 
+    border-radius: 0.3rem;
+}
+#refresh_link:hover{
+    color: #555555;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+}

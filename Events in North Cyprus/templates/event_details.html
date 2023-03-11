@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/event_details.css') }}">
+</head>
+<body>
+
+    <div id="title_container">
+        <h1 id="form_title" >Event Details</h1>
+    </div>
+    <hr>
+    <div id="links">
+        <a id = "link1" class="link" href="/home_page">Go Home</a>
+    </div>
+    <hr>
+    <div id="table_container">
+
+        <table>
+            <tr>
+              <th>Name:</th>
+              <td>{{ event[1] }}</td>
+            </tr>
+            <tr>
+              <th>Description:</th>
+              <td>{{ event[2] }}</td>
+            </tr>
+            <tr>
+              <th>Location:</th>
+              <td>{{ event[6] }}</td>
+            </tr>
+            <tr>
+                <th>City:</th>
+                <td>{{ city_name }}</td>
+              </tr>
+              <tr>
+                <th>Price:</th>
+                <td>{{ event[3] }}</td>
+              </tr>
+              <tr>
+                <th>Date:</th>
+                <td>{{ event[4] }}</td>
+              </tr>
+              <tr>
+                <th>Time:</th>
+                <td>{{ event[5] }}</td>
+              </tr>
+          </table>
+
+    </div>
+    
+</body>
+</html>

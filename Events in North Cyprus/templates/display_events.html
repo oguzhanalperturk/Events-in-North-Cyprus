@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/display_events_page.css') }}">
+</head>
+<body>
+
+    <div id="title_container">
+        <h1 id="form_title" >My Own Events</h1>
+    </div>
+    <hr>
+    <div id="links">
+        <a id = "link1" class="link" href="/home_page">Go Home</a>
+    </div>
+    <hr>
+
+    <div id="table_container">
+
+        <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Location</th>
+              <th>City</th>
+              <th>Price</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th></th>
+            </tr>
+
+            {% for event in events %}
+            <tr class="table_elements">
+             <td class="event_name">{{ event[1] }}</td>
+             <td>{{ event[2] }}</td>
+             <td>{{ event[6] }}</td>
+             <td id="city">{{ cities[loop.index-1] }}</td>
+             <td>{{ event[3] }}</td>
+             <td>{{ event[4] }}</td>
+             <td>{{ event[5] }}</td>
+             <td><a id="{{event[0]|string + ";" + event[7]|string}}" class="deactivate_link" href="{{url_for('deactivate_event', type= event[0])}}" >Deactivate</a></td>
+             <td><a id="{{event[0]|string + ";" + event[7]|string}}" class="activate_link" href="{{url_for('activate_event', activate= event[0])}}" >Activate</a></td>
+            </tr>
+            {% endfor %}
+
+          </table>
+
+    </div>
+
+    <div id="empty_table_message_container">
+        <h1 id="message">You do not have any event !!</h1>
+    </div>
+
+
+
+
+    
+</body>
+
+<script src="{{ url_for('static', filename='js/display_events_page.js') }}"></script>
+
+</html>
